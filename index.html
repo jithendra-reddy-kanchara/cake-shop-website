@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Dreams - Premium Cake Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">🎂 Sweet Dreams</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Cart <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: $<span id="total-price">0.00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Sweet Dreams</h1>
+            <p>Freshly Baked Perfection Every Single Day</p>
+            <a href="#products" class="cta-btn">Explore Our Cakes</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Delicious Cakes</h2>
+            <div class="products-grid">
+                <!-- Chocolate Delight -->
+                <div class="product-card">
+                    <div class="product-image chocolate"></div>
+                    <h3>Chocolate Delight</h3>
+                    <p>Rich, decadent chocolate cake with fudgy frosting</p>
+                    <div class="product-footer">
+                        <span class="price">$35.99</span>
+                        <button class="add-btn" onclick="addToCart('Chocolate Delight', 35.99)">Add</button>
+                    </div>
+                </div>
+
+                <!-- Strawberry Bliss -->
+                <div class="product-card">
+                    <div class="product-image strawberry"></div>
+                    <h3>Strawberry Bliss</h3>
+                    <p>Fresh strawberry layers with cream cheese frosting</p>
+                    <div class="product-footer">
+                        <span class="price">$32.99</span>
+                        <button class="add-btn" onclick="addToCart('Strawberry Bliss', 32.99)">Add</button>
+                    </div>
+                </div>
+
+                <!-- Pistachio Dream -->
+                <div class="product-card">
+                    <div class="product-image pistachio"></div>
+                    <h3>Pistachio Dream</h3>
+                    <p>Gourmet pistachio cake with white chocolate ganache</p>
+                    <div class="product-footer">
+                        <span class="price">$38.99</span>
+                        <button class="add-btn" onclick="addToCart('Pistachio Dream', 38.99)">Add</button>
+                    </div>
+                </div>
+
+                <!-- Citrus Sunrise -->
+                <div class="product-card">
+                    <div class="product-image citrus"></div>
+                    <h3>Citrus Sunrise</h3>
+                    <p>Zesty lemon and orange cake with light glaze</p>
+                    <div class="product-footer">
+                        <span class="price">$34.99</span>
+                        <button class="add-btn" onclick="addToCart('Citrus Sunrise', 34.99)">Add</button>
+                    </div>
+                </div>
+
+                <!-- Lavender Cloud -->
+                <div class="product-card">
+                    <div class="product-image lavender"></div>
+                    <h3>Lavender Cloud</h3>
+                    <p>Elegant lavender cake with honey buttercream</p>
+                    <div class="product-footer">
+                        <span class="price">$36.99</span>
+                        <button class="add-btn" onclick="addToCart('Lavender Cloud', 36.99)">Add</button>
+                    </div>
+                </div>
+
+                <!-- Vanilla Classic -->
+                <div class="product-card">
+                    <div class="product-image vanilla"></div>
+                    <h3>Vanilla Classic</h3>
+                    <p>Timeless vanilla cake with vanilla bean frosting</p>
+                    <div class="product-footer">
+                        <span class="price">$29.99</span>
+                        <button class="add-btn" onclick="addToCart('Vanilla Classic', 29.99)">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Sweet Dreams</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Since 2015, Sweet Dreams has been crafting the finest cakes in the city. We use only premium ingredients and traditional baking methods to create unforgettable flavors.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>100% Fresh Ingredients</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Expert Bakers</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Custom Orders Available</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Free Local Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The best cakes I've ever tasted! Highly recommend Sweet Dreams for any occasion."</p>
+                    <strong>- Sarah M.</strong>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Beautiful presentation and absolutely delicious. Worth every penny!"</p>
+                    <strong>- John D.</strong>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Custom cake for my wedding was perfect. Professional and amazing service."</p>
+                    <strong>- Emily R.</strong>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Fresh, flavorful, and delivered right on time. Can't wait for my next order!"</p>
+                    <strong>- Marcus L.</strong>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Every birthday, we order from Sweet Dreams. Kids love it, parents too!"</p>
+                    <strong>- Patricia K.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <strong>📍 Address</strong>
+                        <p>123 Cake Street, Baker City, BC 12345</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>📞 Phone</strong>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>📧 Email</strong>
+                        <p>hello@sweetdreams.com</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>🕐 Hours</strong>
+                        <p>Mon-Fri: 8AM - 6PM<br>Sat-Sun: 9AM - 5PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sweet Dreams Cake Shop. All rights reserved. 🎂</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
